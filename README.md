@@ -14,6 +14,7 @@ Turtle is a blazing fast & modern javascript plugin to lazy-load your images wit
 ``` bash
 # Using npm
 $ npm install --save turtle.js
+
 # Using yarn
 $ yarn install turtle.js
 ```
@@ -48,6 +49,21 @@ Add ```.turtle ``` class to your image element(s) anywhere in the page.
 ```
 
 ~rest~
+
+## Running Tasks
+
+You can run tasks with the ```yarn``` or ```npm``` shorthand using the following commands:
+
+``` bash
+# Minify task
+$ yarn minify
+
+# Lint task
+$ npm lint
+
+# etc.
+$ ...
+```
 
 ## Browser Support
 

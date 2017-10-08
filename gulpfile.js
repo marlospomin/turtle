@@ -13,13 +13,15 @@ gulp.task('sync', function () {
   });
 
   // Watch for file changes
-  gulp.watch(['./src/*.js'], ['test', 'uglify', 'minify']);
-  gulp.watch(["./example/*.html", "./example/js/*.js"], browserSync.reload);
+  gulp.watch(['./src/*.js'], ['lint', 'uglify', 'minify']);
+  gulp.watch(['./example/*.html', './example/js/*.js', './example/css/*.css'], browserSync.reload);
 });
 
 // Minify task using babel-minify (for es7)
 gulp.task('minify', function () {
   gulp.src(['./src/turtle.js'])
+    .pipe(rename('turtle.es7.js'))
+    .pipe(gulp.dest('./dist'))
     .pipe(minify({
       mangle: {
         keepClassName: true
@@ -35,14 +37,15 @@ gulp.task('uglify', function () {
     .pipe(babel({
 			presets: ['env']
 		}))
+    .pipe(gulp.dest('./dist'))
     .pipe(uglify())
     .pipe(rename('turtle.min.js'))
     .pipe(gulp.dest('./dist'))
     .pipe(gulp.dest('./example/js'))
 });
 
-// Tests task
-gulp.task('test', function () {
+// Lint task
+gulp.task('lint', function () {
   return gulp.src(['./src/*.js'])
     .pipe(eslint({
       "parser": "babel-eslint",

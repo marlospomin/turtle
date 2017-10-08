@@ -19,6 +19,7 @@
   "repository": "marlospomin/turtle",
   "scripts": {
     "gulp": "gulp",
+    "test": "mocha",
     "lint": "gulp lint",
     "minify": "gulp minify",
     "uglify": "gulp uglify"
@@ -33,6 +34,7 @@
     "gulp-babel-minify": "^0.2.0",
     "gulp-eslint": "^4.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglifyjs": "^0.6.2"
+    "gulp-uglifyjs": "^0.6.2",
+    "mocha": "^4.0.1"
   }
 }

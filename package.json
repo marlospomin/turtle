@@ -1,11 +1,28 @@
 {
-  "name": "turtle",
-  "version": "0.0.1",
-  "description": "",
-  "main": "src/turtle.js",
+  "name": "turtle.js",
+  "description": "A blazing fast & modern javascript plugin to lazy-load your images with no dependencies.",
+  "version": "1.0.0",
   "author": "Marlos Pomin",
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "lazyload",
+    "blazing",
+    "fast",
+    "performance",
+    "lightweight",
+    "no dependencies"
+  ],
   "license": "MIT",
-  "private": true,
+  "main": "dist/turtle.js",
+  "repository": "marlospomin/turtle",
+  "scripts": {
+    "gulp": "gulp",
+    "lint": "gulp lint",
+    "minify": "gulp minify",
+    "uglify": "gulp uglify"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",

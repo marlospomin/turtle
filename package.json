@@ -35,6 +35,8 @@
     "gulp-eslint": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglifyjs": "^0.6.2",
+    "jsdom": "^11.3.0",
+    "jsdom-global": "^3.0.2",
     "mocha": "^4.0.1"
   }
 }

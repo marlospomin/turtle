@@ -1,10 +1,10 @@
 # Turtle.js
 
-Turtle is a blazing fast & modern javascript plugin to lazy-load your images with no dependencies.
+> Turtle is a blazing fast & modern javascript plugin to lazy-load your images with no dependencies.
 
 ### Features
 
-* Extremely fast. (Using IntersectionObserverAPI)
+* Extremely fast. (Using Intersection Observer)
 * Lightweight.
 * No dependencies.
 
@@ -24,6 +24,7 @@ Now include turtle and you should be good to go.
 ``` js
 // es7
 import turtle from 'turtle'
+
 // commonjs
 const turtle = require('turtle');
 ```
@@ -42,13 +43,21 @@ Files with ```.es7``` suffix are what they mean and should **not** be used in mo
 
 ## Usage
 
-Add ```.turtle ``` class to your image element(s) anywhere in the page.
+Add ```.turtle ``` class to your element(s) and the image path using ```data-src``` attribute as follows below.
 
 ``` html
 <img class="turtle" data-src="image.jpg" alt="">
 ```
 
-~rest~
+If you want to use a *placeholder* for the real image refer it in the ```src``` attribute:
+
+``` html
+<img class="" src="placeholder.jpg" data-src="" alt="">
+```
+
+### Configuring
+
+~stuff~
 
 ## Running Tasks
 
@@ -59,7 +68,7 @@ You can run tasks with the ```yarn``` or ```npm``` shorthand using the following
 $ yarn minify
 
 # Lint task
-$ npm lint
+$ yarn lint
 
 # etc.
 $ ...
@@ -73,7 +82,7 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 
 ## Contributing
 
-If you feel like we missed something just let us know! Make a pull request or open an issue using a discussion/request label and we will go from there.
+If you feel like we missed something please do send us a message or, alternatively make a pull request or open an issue using a discussion/request label and we will go from there.
 
 ## License
 

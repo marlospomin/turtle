@@ -1,27 +1,35 @@
-require('jsdom-global')()
-
-const assert = require('assert');
-const turtle = require('../src/turtle.js');
-
+// Turtle tests
 describe('turtle', function () {
   describe('intersection observer', function () {
     it('should be loaded', function () {
-      // assert('IntersectionObserver' in window);
-      assert.equal('function', typeof IntersectionObserver);
+      assert('IntersectionObserver' in window);
     });
   });
 
-  describe('images containing appropriated class', function () {
-    beforeEach(function () {
+  describe('images containing the appropriated class', function () {
+    before(function () {
       const image = document.createElement('img');
-      image.dataset.src = Math.random().toString(36).substring(7);
+      image.dataset.src = 'turtle-example.jpg';
       image.classList.add('lazyload');
       document.body.appendChild(image);
     })
 
     it('should be loaded', function () {
       const image = document.querySelector('.lazyload');
-      assert(image.classList.contains('.lazyload--handled'));
+      // Content
     });
   });
+
+  describe('images not containing the appropriated class', function () {
+    before(function () {
+      const image = document.createElement('img');
+      image.dataset.src = 'turtle-example.jpg';
+      document.body.appendChild(image);
+    })
+
+    it('should not be loaded', function () {
+      const image = document.querySelector('img');
+      // Content
+    });
+  })
 });

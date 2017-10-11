@@ -2,51 +2,47 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const rename = require("gulp-rename");
 const eslint = require('gulp-eslint');
+const karma = require('karma').Server;
 const uglify = require('gulp-uglifyjs');
 const minify = require("gulp-babel-minify");
 const browserSync = require('browser-sync');
 
-// Live reload task
+// Browser sync task
 gulp.task('sync', function () {
   browserSync.init({
     server: "./example/"
   });
 
   // Watch for file changes
-  gulp.watch(['./src/*.js'], ['lint', 'uglify', 'minify']);
+  gulp.watch(['./src/*.js'], ['reload', 'test', 'build']);
   gulp.watch(['./example/*.html', './example/js/*.js', './example/css/*.css'], browserSync.reload);
 });
 
-// Minify task using babel-minify (for es7)
-gulp.task('minify', function () {
+// Reload task
+gulp.task('reload', function () {
   gulp.src(['./src/turtle.js'])
-    .pipe(rename('turtle.es7.js'))
-    .pipe(gulp.dest('./dist'))
-    .pipe(minify({
-      mangle: {
-        keepClassName: true
-      }
-    }))
-    .pipe(rename('turtle.es7.min.js'))
-    .pipe(gulp.dest('./dist'))
-});
-
-// Minify task using uglifyjs (for es5)
-gulp.task('uglify', function () {
-  gulp.src('./src/turtle.js')
     .pipe(babel({
-			presets: ['env']
-		}))
-    .pipe(gulp.dest('./dist'))
+      presets: ['env']
+    }))
     .pipe(uglify())
     .pipe(rename('turtle.min.js'))
-    .pipe(gulp.dest('./dist'))
     .pipe(gulp.dest('./example/js'))
+});
+
+// Test task
+gulp.task('test', function (done) {
+  new karma({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, function (exitCode) {
+    done();
+    process.exit(exitCode);
+  }).start();
 });
 
 // Lint task
 gulp.task('lint', function () {
-  return gulp.src(['./src/*.js'])
+  return gulp.src(['./src/turtle.js'])
     .pipe(eslint({
       "parser": "babel-eslint",
       rules: {
@@ -66,6 +62,29 @@ gulp.task('lint', function () {
       }
     }))
     .pipe(eslint.format())
+});
+
+// Build task
+gulp.task('build', function () {
+  gulp.src(['./src/turtle.js'])
+    .pipe(rename('turtle.es7.js'))
+    .pipe(gulp.dest('./dist'))
+    .pipe(minify({
+      mangle: {
+        keepClassName: true
+      }
+    }))
+    .pipe(rename('turtle.es7.min.js'))
+    .pipe(gulp.dest('./dist'))
+
+  gulp.src(['./src/turtle.js'])
+    .pipe(babel({
+    	presets: ['env']
+    }))
+    .pipe(gulp.dest('./dist'))
+    .pipe(uglify())
+    .pipe(rename('turtle.min.js'))
+    .pipe(gulp.dest('./dist'))
 });
 
 // Set the defaukt task as 'sync'

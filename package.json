@@ -19,24 +19,27 @@
   "repository": "marlospomin/turtle",
   "scripts": {
     "gulp": "gulp",
-    "test": "mocha",
+    "test": "gulp test",
     "lint": "gulp lint",
-    "minify": "gulp minify",
-    "uglify": "gulp uglify"
+    "reload": "gulp reload",
+    "build": "gulp build"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.8",
+    "chai": "^4.1.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-babel-minify": "^0.2.0",
     "gulp-eslint": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglifyjs": "^0.6.2",
-    "jsdom": "^11.3.0",
-    "jsdom-global": "^3.0.2",
+    "karma": "^1.7.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
     "mocha": "^4.0.1"
   }
 }

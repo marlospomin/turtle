@@ -1,12 +1,13 @@
 // Actual plugin below
 // Get all of the images that are marked up to lazy load
-const images = document.querySelectorAll('.lazyload');
+const images = document.querySelectorAll('.turtle');
 const config = {
   // If the image gets within 50px in the Y axis, start the download.
   rootMargin: '50px 0px',
-  threshold: 0.01
+  threshold: 0
 };
 
+// Counts all the images found that were marked
 let imageCount = images.length;
 let observer;
 
@@ -14,16 +15,17 @@ let observer;
 if (!('IntersectionObserver' in window)) {
   loadImagesImmediately(images);
 } else {
-  // It is supported, load the images
+  // If supported, load the images
   observer = new IntersectionObserver(onIntersection, config);
 
-  // foreach() is not supported in IE
+  // foreach() is not supported in IE < 11
   for (let i = 0; i < images.length; i++) {
     let image = images[i];
-    if (image.classList.contains('lazyload--handled')) {
+    if (image.classList.contains('turtle--handled')) {
       continue;
     }
 
+    // Observes the image
     observer.observe(image);
   }
 }
@@ -40,6 +42,7 @@ function fetchImage(url) {
 function preloadImage(image) {
   const src = image.dataset.src;
 
+  // If src is not found break
   if (!src) {
     return;
   }
@@ -48,7 +51,7 @@ function preloadImage(image) {
 }
 
 function loadImagesImmediately(images) {
-  // foreach() is not supported in IE
+  // foreach() is not supported in IE < 11
   for (let i = 0; i < images.length; i++) {
     let image = images[i];
     preloadImage(image);
@@ -56,6 +59,7 @@ function loadImagesImmediately(images) {
 }
 
 function disconnect() {
+  // If not observing break
   if (!observer) {
     return;
   }
@@ -66,7 +70,7 @@ function disconnect() {
 function onIntersection(entries) {
   // Disconnect if we've already loaded all of the images
   if (imageCount === 0) {
-    observer.disconnect();
+    disconnect();
   }
 
   // Loop through the entries
@@ -85,7 +89,8 @@ function onIntersection(entries) {
 
 function applyImage(img, src) {
   // Prevent this from being lazy loaded a second time.
-  img.classList.add('lazyload--handled');
+  img.classList.add('turle--handled');
+  // Update image src value
   img.src = src;
   // Add fade-in effect handled by the user
   img.classList.add('fade-in');

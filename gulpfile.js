@@ -14,7 +14,7 @@ gulp.task('sync', function () {
   });
 
   // Watch for file changes
-  gulp.watch(['./src/*.js'], ['reload', 'test', 'build']);
+  gulp.watch(['./src/*.js'], ['reload', 'build']);
   gulp.watch(['./example/*.html', './example/js/*.js', './example/css/*.css'], browserSync.reload);
 });
 

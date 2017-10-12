@@ -23,7 +23,8 @@ Now include turtle and you should be good to go.
 
 ``` js
 // es7
-import turtle from 'turtle'
+// import turtle from 'turtle' doesn't work yet
+import * from 'turtle'
 
 // commonjs
 const turtle = require('turtle');
@@ -33,7 +34,8 @@ Alternatively you can include a minified version of turtle (or the source code, 
 
 ``` html
 <body>
-  <script src="~stuff~"></script>
+  <!-- CDN link not available yet, use the dist -->
+  <script src="turtle.min.js"></script>
 </body>
 ```
 
@@ -57,15 +59,21 @@ If you want to use a *placeholder* for the real image refer it in the ```src``` 
 
 ### Configuring
 
-~stuff~
+These are the current options found in the source file, change them as you wish.
+
+| Option | Default | Description |
+| --- | --- | --- |
+| `selector` | .turtle | A selector that indicates which class to search elements from. |
+| `rootMargin` | 50px | Distance (Y axis) from the element for the event to occur. |
+| `treshold` | 0 | Not used by turtle at this time. |
 
 ## Running Tasks
 
 You can run tasks with the ```yarn``` or ```npm``` shorthand using the following commands:
 
 ``` bash
-# Minify task
-$ yarn minify
+# Build task
+$ yarn build
 
 # Lint task
 $ yarn lint
@@ -79,6 +87,14 @@ $ ...
 You can check the browsers supported [here](http://caniuse.com/#feat=intersectionobserver).
 
 **Minified files found in the dist folder are es5 compatible.**
+
+## Todo List
+
+* [ ] Refactor turtle to use a function caller.
+* [ ] Make tests work properly.
+* [ ] Update promise to async/await.
+* [ ] Add options to the plugin.
+* [ ] Make it work on IE 11.
 
 ## Contributing
 

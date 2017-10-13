@@ -13,10 +13,10 @@
 
 ``` bash
 # Using npm
-$ npm install --save turtle.js
+$ npm install --save turtle-js
 
 # Using yarn
-$ yarn install turtle.js
+$ yarn install turtle-js
 ```
 
 Now include turtle and you should be good to go.

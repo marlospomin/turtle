@@ -1,5 +1,5 @@
 // Turtle tests
-describe('turtle', function() {
+describe('turtle', () => {
   // "Just to make sure" tests
   describe('intersection observer', () => {
     it('should be supported', () => {
@@ -25,7 +25,7 @@ describe('turtle', function() {
   });
 
   describe('images not containing the appropriated class', () => {
-    before(function() {})
+    before(() => {})
 
     it('should not be loaded', () => {
 

@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './src/*.js',
-      './test/*.js'
+      { pattern: './dist/turtle.min.js' },
+      { pattern: './test/*.js' }
     ],
 
 
@@ -38,7 +38,7 @@ module.exports = function(config) {
 
 
     // web server port
-    port: 9876,
+    port: 8080,
 
 
     // enable / disable colors in the output (reporters and logs)

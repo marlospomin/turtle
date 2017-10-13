@@ -1,68 +1,42 @@
 // Turtle tests
-describe('turtle', function () {
-  describe('intersection observer', function () {
-    it('should be supported', function () {
-      assert('IntersectionObserver' in window);
+describe('turtle', function() {
+  // "Just to make sure" tests
+  describe('intersection observer', () => {
+    it('should be supported', () => {
+      assert(window.IntersectionObserver);
     });
 
-    it('should be an object', function () {
-      assert(typeof observer === 'object');
-    });
-
-    it('should return a function', function () {
+    it('should return a function', () => {
       expect(observer.observe).to.be.a('function');
     });
   });
 
-  // describe('source code', function () {
-  //   it('should be a function', function () {
-  //     expect(turtle).to.be.a('function');
-  //   });
-  // });
+  // Actual tests
+  describe('source code', () => {
+    it('should be a function', () => {
+      expect(turtle).to.be.a('function');
+    });
+  });
 
-  // describe('images containing the appropriated class', function () {
-  //   before(function () {
-  //     document.body.innerHTML = "";
-  //     const image = document.createElement('img');
-  //     image.classList.add('lazyload');
-  //     image.src = "";
-  //     image.dataset.src = Math.random().toString(12) + '.jpg';
-  //     document.body.appendChild(image);
-  //     console.log(image);
-  //   })
-  //
-  //   it('should be loaded', function () {
-  //     const image = document.querySelector('img');
-  //     assert.ok(image.classList.contains('lazyload--handled'));
-  //   });
-  // });
+  describe('images containing the appropriated class', () => {
+    before(() => {})
 
-  // describe('images not containing the appropriated class', function () {
-  //   before(function () {
-  //     document.body.innerHTML = "";
-  //     const image = document.createElement('img');
-  //     image.dataset.src = Math.random().toString(12) + '.jpg';
-  //     document.body.appendChild(image);
-  //   })
-  //
-  //   it('should not be loaded', function () {
-  //     const image = document.querySelector('img');
-  //     assert.notEqual(image.src, image.dataset.src);
-  //   });
-  // });
+    it('should be loaded', () => {});
+  });
 
-  // describe('images containing the appropriated data attribute', function () {
-  //   before(function () {
-  //     document.body.innerHTML = "";
-  //     const image = document.createElement('img');
-  //     image.classList.add('lazyload');
-  //     image.dataset.src = Math.random().toString(12) + '.jpg';
-  //     document.body.appendChild(image);
-  //   })
-  //
-  //   it('should be loaded', function () {
-  //     const image = document.querySelector('img');
-  //     assert.equal(image.src, image.dataset.src);
-  //   });
-  // });
+  describe('images not containing the appropriated class', () => {
+    before(function() {})
+
+    it('should not be loaded', () => {
+
+    });
+  });
+
+  describe('images containing the appropriated data attribute', () => {
+    before(() => {})
+
+    it('should be loaded', () => {
+
+    });
+  });
 });

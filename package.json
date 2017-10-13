@@ -1,5 +1,5 @@
 {
-  "name": "turtle.js",
+  "name": "turtle-js",
   "description": "A blazing fast & modern javascript plugin to lazy-load your images with no dependencies.",
   "version": "1.0.0",
   "author": "Marlos Pomin",
@@ -27,6 +27,7 @@
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.8",
     "chai": "^4.1.2",

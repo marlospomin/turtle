@@ -22,7 +22,8 @@ gulp.task('sync', function () {
 gulp.task('reload', function () {
   gulp.src(['./src/turtle.js'])
     .pipe(babel({
-      presets: ['env']
+      presets: ['env'],
+      plugins: ['add-module-exports']
     }))
     .pipe(uglify())
     .pipe(rename('turtle.min.js'))
@@ -79,7 +80,8 @@ gulp.task('build', function () {
 
   gulp.src(['./src/turtle.js'])
     .pipe(babel({
-    	presets: ['env']
+      presets: ['env'],
+      plugins: ['add-module-exports']
     }))
     .pipe(gulp.dest('./dist'))
     .pipe(uglify())

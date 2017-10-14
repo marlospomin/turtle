@@ -6,7 +6,6 @@ const karma = require('karma').Server;
 const uglify = require('gulp-uglifyjs');
 const minify = require("gulp-babel-minify");
 const browserSync = require('browser-sync');
-const browserify = require('gulp-browserify');
 
 // Browser sync task
 gulp.task('sync', function () {
@@ -24,9 +23,8 @@ gulp.task('reload', function () {
   gulp.src(['./src/turtle.js'])
     .pipe(babel({
       presets: ['env'],
-      plugins: ['add-module-exports']
+      plugins: ['add-module-exports', 'transform-es2015-modules-umd']
     }))
-    .pipe(browserify())
     .pipe(uglify())
     .pipe(rename('turtle.min.js'))
     .pipe(gulp.dest('./example/js'))
@@ -83,9 +81,8 @@ gulp.task('build', function () {
   gulp.src(['./src/turtle.js'])
     .pipe(babel({
       presets: ['env'],
-      plugins: ['add-module-exports']
+      plugins: ['add-module-exports', 'transform-es2015-modules-umd']
     }))
-    .pipe(browserify())
     .pipe(gulp.dest('./dist'))
     .pipe(uglify())
     .pipe(rename('turtle.min.js'))

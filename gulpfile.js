@@ -26,10 +26,8 @@ gulp.task('reload', function () {
       presets: ['env'],
       plugins: ['add-module-exports']
     }))
+    .pipe(browserify())
     .pipe(uglify())
-    .pipe(browserify({
-		  insertGlobals: false
-	  }))
     .pipe(rename('turtle.min.js'))
     .pipe(gulp.dest('./example/js'))
 });
@@ -87,9 +85,7 @@ gulp.task('build', function () {
       presets: ['env'],
       plugins: ['add-module-exports']
     }))
-    .pipe(browserify({
-      insertGlobals: false
-    }))
+    .pipe(browserify())
     .pipe(gulp.dest('./dist'))
     .pipe(uglify())
     .pipe(rename('turtle.min.js'))

@@ -22,9 +22,8 @@ $ yarn install turtle-js
 Now include turtle and you should be good to go.
 
 ``` js
-// es7
-// import turtle from 'turtle' doesn't work yet
-import * from 'turtle'
+// es6
+import turtle from 'turtle'
 
 // commonjs
 const turtle = require('turtle');
@@ -55,6 +54,13 @@ If you want to use a *placeholder* for the real image refer it in the ```src``` 
 
 ``` html
 <img class="" src="placeholder.jpg" data-src="" alt="">
+```
+
+Call turtle function anywhere in your code.
+
+``` js
+// Call me
+turtle();
 ```
 
 ### Configuring
@@ -90,7 +96,7 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 
 ## Todo List
 
-* [ ] Refactor turtle to use a function caller.
+* [x] Refactor turtle to use a function caller.
 * [ ] Make tests work properly.
 * [ ] Update promise to async/await.
 * [ ] Add options to the plugin.

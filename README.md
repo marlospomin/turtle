@@ -33,8 +33,7 @@ Alternatively you can include a minified version of turtle (or the source code, 
 
 ``` html
 <body>
-  <!-- CDN link not available yet, use the dist -->
-  <script src="turtle.min.js"></script>
+  <script src="https://unpkg.com/turtle-js"></script>
 </body>
 ```
 

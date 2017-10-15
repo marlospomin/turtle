@@ -24,7 +24,7 @@
     "reload": "gulp reload",
     "build": "gulp build"
   },
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-plugin-add-module-exports": "^0.2.1",

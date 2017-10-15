@@ -5,13 +5,13 @@ describe('turtle', () => {
     it('should be supported', () => {
       assert(window.IntersectionObserver);
     });
-
-    it('should return a function', () => {});
   });
 
   // Actual tests
   describe('source code', () => {
-    it('should be a function', () => {});
+    it('should be a function', () => {
+      assert(window.turtle);
+    });
   });
 
   describe('images containing the appropriated class', () => {

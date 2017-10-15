@@ -13,8 +13,8 @@ gulp.task('sync', function () {
     server: "./example/"
   });
 
-  // Watch for file changes
-  gulp.watch(['./src/*.js'], ['reload', 'build']);
+  // Watch for file changes and reload
+  gulp.watch(['./src/*.js'], ['reload']);
   gulp.watch(['./example/*.html', './example/js/*.js', './example/css/*.css'], browserSync.reload);
 });
 

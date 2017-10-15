@@ -59,8 +59,8 @@ If you want to use a *placeholder* for the real image refer it in the ```src``` 
 Call turtle function anywhere in your code.
 
 ``` js
-// Call me
-turtle();
+// Call turtle
+const turtle = turtle();
 ```
 
 ### Configuring

@@ -60,7 +60,7 @@ Call turtle function anywhere in your code.
 
 ``` js
 // Call turtle
-const turtle = turtle();
+turtle();
 ```
 
 ### Configuring
@@ -96,11 +96,14 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 
 ## Todo List
 
-* [x] Refactor turtle to use a function caller.
-* [ ] Make tests work properly.
-* [ ] Update promise to async/await.
-* [ ] Add options to the plugin.
+* [x] ~~Refactor turtle to use a function caller.~~
+* [ ] Refactor turtle to return something? as in ```const turtle = turtle();```
+* [ ] Refactor turtle to use async/await.
+* [ ] Write real tests and make them work properly.
+* [ ] Add options to the plugin when called.
 * [ ] Make it work on IE 11.
+
+**Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.
 
 ## Contributing
 

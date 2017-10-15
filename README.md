@@ -1,4 +1,4 @@
-# Turtle.js
+# Turtle.js [![Build Status](https://travis-ci.com/marlospomin/turtle.svg?token=PosttrboZuYSHkXP2Lm8&branch=master)](https://travis-ci.com/marlospomin/turtle)
 
 > Turtle is a blazing fast & modern javascript plugin to lazy-load your images with no dependencies.
 

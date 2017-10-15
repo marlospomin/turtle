@@ -16,16 +16,8 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = turtle;
-  // Get all of the images that are marked up to lazy load
-  var images = document.querySelectorAll('.turtle');
-  var config = {
-    // If the image gets within 50px of the Y axis, start the download
-    rootMargin: '50px 0px',
-    threshold: 0
-  };
 
-  function turtle() {
+  exports.default = function () {
     // Counts all the images found that were marked
     var imageCount = images.length;
     var observer = void 0;
@@ -113,8 +105,15 @@
       // Update image src value
       img.src = src;
     }
-  }
+  };
 
-  turtle();
+  // Get all of the images that are marked up to lazy load
+  var images = document.querySelectorAll('.turtle');
+  var config = {
+    // If the image gets within 50px of the Y axis, start the download
+    rootMargin: '50px 0px',
+    threshold: 0
+  };
+
   module.exports = exports['default'];
 });

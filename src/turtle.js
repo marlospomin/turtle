@@ -6,7 +6,7 @@ const config = {
   threshold: 0
 };
 
-export default function turtle() {
+export default function () {
   // Counts all the images found that were marked
   let imageCount = images.length;
   let observer;
@@ -93,5 +93,3 @@ export default function turtle() {
     img.src = src;
   }
 }
-
-turtle();

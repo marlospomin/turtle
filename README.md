@@ -97,6 +97,8 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 
 * [x] ~~Refactor turtle to use a function caller.~~
 * [ ] Refactor turtle to return something? as in ```const turtle = turtle();```
+* [ ] Refactor turtle's observe "action" to a function. ```observe(image);```
+* [ ] Refactor main to return ```observe(image)```?
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work properly.
 * [ ] Add options to the plugin when called.

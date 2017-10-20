@@ -100,8 +100,9 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 * [ ] Refactor turtle's observe "action" to a function. ```observe(image);```
 * [ ] Refactor main to return ```observe(image)```?
 * [ ] Refactor turtle to use async/await.
-* [ ] Write real tests and make them work properly.
+* [ ] Write real tests and make them work.
 * [ ] Add options to the plugin when called.
+* [ ] Add a project page.
 * [ ] Make it work on IE 11.
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.

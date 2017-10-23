@@ -22,7 +22,8 @@ gulp.task('reload', function () {
   gulp.src(['./src/turtle.js'])
     .pipe(babel({
       presets: ['env'],
-      plugins: ['add-module-exports', 'transform-es2015-modules-umd']
+      plugins: ['add-module-exports', 'transform-object-rest-spread',
+       'transform-async-to-generator', 'transform-es2015-modules-umd']
     }))
     .pipe(uglify())
     .pipe(rename('turtle.min.js'))
@@ -79,7 +80,8 @@ gulp.task('build', function () {
   gulp.src(['./src/turtle.js'])
     .pipe(babel({
       presets: ['env'],
-      plugins: ['add-module-exports', 'transform-es2015-modules-umd']
+      plugins: ['add-module-exports', 'transform-object-rest-spread',
+       'transform-async-to-generator', 'transform-es2015-modules-umd']
     }))
     .pipe(gulp.dest('./dist'))
     .pipe(uglify())

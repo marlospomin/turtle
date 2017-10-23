@@ -64,13 +64,20 @@ turtle();
 
 ### Configuring
 
-These are the current options found in the source file, change them as you wish.
+These are the current options that can be modified, change them as you wish.
+
+``` js
+turtle('.mySelector', config = {
+  rootMargin: '0px',
+  treshold: 0
+});
+```
 
 | Option | Default | Description |
 | --- | --- | --- |
-| `selector` | .turtle | A selector that indicates which class to search elements from. |
-| `rootMargin` | 50px | Distance (Y axis) from the element for the event to occur. |
-| `treshold` | 0 | Not used by turtle at this time. |
+| `selector` | ```'.turtle'``` | A selector that indicates which class to search elements from. |
+| `rootMargin` | ```50px``` | Distance (Y axis) from the element for the event to occur. |
+| `treshold` | ```0``` | Not used by turtle at this time. |
 
 ## Running Tasks
 
@@ -98,14 +105,15 @@ IE 11 is not supported.
 ## Todo List
 
 * [x] ~~Refactor turtle to use a function caller.~~
-* [ ] Refactor turtle to return something? as in ```const turtle = turtle();```
-* [x] Refactor turtle's observe "action" to a function. ```observe(images);```
-* [x] Refactor main to return ```observe(image)```?
+* [ ] Refactor turtle to have a proper return? as in ```const turtle = turtle();```
+* [x] ~~Refactor turtle's observe "action" to a function. ```observe(images);```~~
+* [x] Refactor main to return ```observe(images);```?
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work.
 * [x] Add options to the plugin when called.
 * [ ] Add a project page.
 * [ ] Test ```rel``` preload effects on html (example).
+* [ ] Drop ```.es7``` modules.
 * [ ] Refactor turtle to the bones.
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.

@@ -1,7 +1,7 @@
 {
   "name": "turtle-js",
   "description": "A blazing fast & modern javascript plugin to lazy-load your images with no dependencies.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Marlos Pomin",
   "files": [
     "dist/"

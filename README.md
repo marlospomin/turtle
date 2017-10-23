@@ -91,6 +91,8 @@ $ ...
 
 You can check the browsers supported [here](http://caniuse.com/#feat=intersectionobserver).
 
+IE 11 is not supported.
+
 **Minified files found in the dist folder are es5 compatible.**
 
 ## Todo List
@@ -103,7 +105,6 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 * [ ] Write real tests and make them work.
 * [ ] Add options to the plugin when called.
 * [ ] Add a project page.
-* [ ] Make it work on IE 11.
 * [ ] Test ```rel``` preload effects on html (example).
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.

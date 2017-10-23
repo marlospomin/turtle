@@ -97,13 +97,14 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 
 * [x] ~~Refactor turtle to use a function caller.~~
 * [ ] Refactor turtle to return something? as in ```const turtle = turtle();```
-* [ ] Refactor turtle's observe "action" to a function. ```observe(image);```
+* [x] Refactor turtle's observe "action" to a function. ```observe(images);```
 * [ ] Refactor main to return ```observe(image)```?
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work.
 * [ ] Add options to the plugin when called.
 * [ ] Add a project page.
 * [ ] Make it work on IE 11.
+* [ ] Test ```rel``` preload effects on html (example).
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.
 

@@ -12,10 +12,14 @@ export default function () {
   let observer;
 
   // If we don't have support for intersection observer, loads the images immediately
+  // Else, initialize turtle and observe the marked images
   if (!('IntersectionObserver' in window)) {
     loadImagesImmediately(images);
   } else {
-    // If it is supported, load the images
+    observe(images);
+  }
+
+  function observe(images) {
     observer = new IntersectionObserver(onIntersection, config);
 
     // foreach() is not supported in IE < 11

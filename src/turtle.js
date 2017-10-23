@@ -1,28 +1,28 @@
-// Get all of the images that are marked up to lazy load
-const images = document.querySelectorAll('.turtle');
-const config = {
+const defaultConfig = {
   // If the image gets within 50px of the Y axis, start the download
-  rootMargin: '50px 0px',
+  rootMargin: '50px',
   threshold: 0
 };
 
-export default function () {
+// If we don't have support for intersection observer, throw error
+if (!('IntersectionObserver' in window)) {
+  throw new Error('Intersection Observer is not supported by this browser.');
+}
+
+export default function (selector = '.turtle', config = {}) {
+  // Push default config options into config above
+  const { rootMargin, treshold } = { ...defaultConfig, ...config };
+
+  // Get all of the images that are marked up to lazy load
+  const images = document.querySelectorAll(selector);
+
   // Counts all the images found that were marked
   let imageCount = images.length;
   let observer;
 
-  // If we don't have support for intersection observer, loads the images immediately
-  // Else, initialize turtle and observe the marked images
-  if (!('IntersectionObserver' in window)) {
-    loadImagesImmediately(images);
-  } else {
-    observe(images);
-  }
-
   function observe(images) {
     observer = new IntersectionObserver(onIntersection, config);
 
-    // foreach() is not supported in IE < 11
     images.forEach((image) => {
       // If the image has been handled, skip to the next image
       if (image.classList.contains('turtle--handled')) {
@@ -53,13 +53,6 @@ export default function () {
 
     // Fetches an image and applies it to the viewport
     return fetchImage(src).then(() => { applyImage(image, src); });
-  }
-
-  function loadImagesImmediately(images) {
-    // foreach() is not supported in IE < 11
-    images.forEach((image) => {
-      preloadImage(image);
-    });
   }
 
   function disconnect() {
@@ -96,4 +89,6 @@ export default function () {
     // Update image src value
     img.src = src;
   }
+
+  return observe(images);
 }

@@ -18,22 +18,26 @@
   });
 
   exports.default = function () {
+    var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.turtle';
+    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    // Push default config options into config above
+    var _defaultConfig$config = _extends({}, defaultConfig, config),
+        rootMargin = _defaultConfig$config.rootMargin,
+        treshold = _defaultConfig$config.treshold;
+
+    // Get all of the images that are marked up to lazy load
+
+
+    var images = document.querySelectorAll(selector);
+
     // Counts all the images found that were marked
     var imageCount = images.length;
     var observer = void 0;
 
-    // If we don't have support for intersection observer, loads the images immediately
-    // Else, initialize turtle and observe the marked images
-    if (!('IntersectionObserver' in window)) {
-      loadImagesImmediately(images);
-    } else {
-      observe(images);
-    }
-
     function observe(images) {
       observer = new IntersectionObserver(onIntersection, config);
 
-      // foreach() is not supported in IE < 11
       images.forEach(function (image) {
         // If the image has been handled, skip to the next image
         if (image.classList.contains('turtle--handled')) {
@@ -65,13 +69,6 @@
       // Fetches an image and applies it to the viewport
       return fetchImage(src).then(function () {
         applyImage(image, src);
-      });
-    }
-
-    function loadImagesImmediately(images) {
-      // foreach() is not supported in IE < 11
-      images.forEach(function (image) {
-        preloadImage(image);
       });
     }
 
@@ -109,15 +106,34 @@
       // Update image src value
       img.src = src;
     }
+
+    return observe(images);
   };
 
-  // Get all of the images that are marked up to lazy load
-  var images = document.querySelectorAll('.turtle');
-  var config = {
+  var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  var defaultConfig = {
     // If the image gets within 50px of the Y axis, start the download
-    rootMargin: '50px 0px',
+    rootMargin: '50px',
     threshold: 0
   };
+
+  // If we don't have support for intersection observer, throw error
+  if (!('IntersectionObserver' in window)) {
+    throw new Error('Intersection Observer is not supported by this browser.');
+  }
 
   module.exports = exports['default'];
 });

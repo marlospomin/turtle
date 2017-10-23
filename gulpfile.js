@@ -4,7 +4,6 @@ const rename = require("gulp-rename");
 const eslint = require('gulp-eslint');
 const karma = require('karma').Server;
 const uglify = require('gulp-uglifyjs');
-const minify = require("gulp-babel-minify");
 const browserSync = require('browser-sync');
 
 // Browser sync task
@@ -70,10 +69,6 @@ gulp.task('build', function () {
   gulp.src(['./src/turtle.js'])
     .pipe(rename('turtle.es7.js'))
     .pipe(gulp.dest('./dist'))
-    .pipe(minify({
-      mangle: {
-        keepClassName: true
-      }
     }))
     .pipe(rename('turtle.es7.min.js'))
     .pipe(gulp.dest('./dist'))

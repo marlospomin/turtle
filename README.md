@@ -99,7 +99,7 @@ $ ...
 
 You can check the browsers supported [here](http://caniuse.com/#feat=intersectionobserver).
 
-IE 11 is not supported.
+IE 11 is not supported by turtle.
 
 **Minified files found in the dist folder are es5 compatible.**
 

@@ -8,6 +8,10 @@
 * Lightweight.
 * No dependencies.
 
+## Demo
+
+Example page on codepen (temporary), click [here](https://codepen.io/marlospomin/pen/EbYXqe).
+
 
 ## Install
 
@@ -112,7 +116,7 @@ IE 11 is not supported by turtle.
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work.
 * [x] ~~Add options to the plugin when called.~~
-* [ ] Add a project page.
+* [x] Add a project page.
 * [ ] Drop ```.es7``` modules.
 * [ ] Refactor turtle to the bones.
 

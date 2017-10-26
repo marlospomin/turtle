@@ -67,6 +67,7 @@ turtle();
 These are the current options that can be modified, change them as you wish.
 
 ``` js
+// Custom options
 turtle('.mySelector', config = {
   rootMargin: '0px',
   treshold: 0
@@ -75,9 +76,6 @@ turtle('.mySelector', config = {
 
 | Option | Default | Description |
 | --- | --- | --- |
-| `selector` | ```'.turtle'``` | A selector that indicates which class to search elements from. |
-| `rootMargin` | ```50px``` | Distance (Y axis) from the element for the event to occur. |
-| `treshold` | ```0``` | Not used by turtle at this time. |
 | `selector` | `.turtle` | A selector that indicates which class to search elements from. |
 | `rootMargin` | `50px` | Distance (Y axis) from the element for the event to occur. |
 | `treshold` | `0` | Not used by turtle at this time. |
@@ -113,9 +111,8 @@ IE 11 is not supported.
 * [x] Refactor main to return ```observe(images);```?
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work.
-* [x] Add options to the plugin when called.
+* [x] ~~Add options to the plugin when called.~~
 * [ ] Add a project page.
-* [ ] Test ```rel``` preload effects on html (example).
 * [ ] Drop ```.es7``` modules.
 * [ ] Refactor turtle to the bones.
 

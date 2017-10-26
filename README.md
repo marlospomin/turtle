@@ -16,7 +16,7 @@
 $ npm install --save turtle-js
 
 # Using yarn
-$ yarn install turtle-js
+$ yarn add turtle-js
 ```
 
 Now include turtle and you should be good to go.

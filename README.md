@@ -78,6 +78,9 @@ turtle('.mySelector', config = {
 | `selector` | ```'.turtle'``` | A selector that indicates which class to search elements from. |
 | `rootMargin` | ```50px``` | Distance (Y axis) from the element for the event to occur. |
 | `treshold` | ```0``` | Not used by turtle at this time. |
+| `selector` | `.turtle` | A selector that indicates which class to search elements from. |
+| `rootMargin` | `50px` | Distance (Y axis) from the element for the event to occur. |
+| `treshold` | `0` | Not used by turtle at this time. |
 
 ## Running Tasks
 

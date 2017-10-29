@@ -68,16 +68,6 @@ gulp.task('lint', function () {
 // Build task
 gulp.task('build', function () {
   gulp.src(['./src/turtle.js'])
-    .pipe(rename('turtle.es7.js'))
-    .pipe(gulp.dest('./dist'))
-    .pipe(babel({
-      presets: ['minify'],
-      plugins: ['transform-object-rest-spread']
-    }))
-    .pipe(rename('turtle.es7.min.js'))
-    .pipe(gulp.dest('./dist'))
-
-  gulp.src(['./src/turtle.js'])
     .pipe(babel({
       presets: ['env'],
       plugins: ['add-module-exports', 'transform-object-rest-spread',

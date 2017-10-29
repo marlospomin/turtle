@@ -41,10 +41,6 @@ Alternatively you can include a minified version of turtle (or the source code, 
 </body>
 ```
 
-### Build Explanation
-
-Files with ```.es7``` suffix are what they mean and should **not** be used in most cases (as they usually break on older browsers), if you don't care about compatibility use them as you wish.
-
 ## Usage
 
 Add ```.turtle ``` class to your element(s) and the image path using ```data-src``` attribute as follows below.
@@ -117,7 +113,7 @@ IE 11 is not supported by turtle.
 * [ ] Write real tests and make them work.
 * [x] ~~Add options to the plugin when called.~~
 * [x] Add a project page.
-* [ ] Drop ```.es7``` modules.
+* [x] ~~Drop ```.es7``` modules.~~
 * [ ] Refactor turtle to the bones.
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.

@@ -33,7 +33,7 @@ import turtle from 'turtle'
 const turtle = require('turtle');
 ```
 
-Alternatively you can include a minified version of turtle (or the source code, up to you) on your page via direct file or our **CDN** link.
+Alternatively you can include a minified version of turtle (or the source code, up to you) on your page via direct file or using our **CDN** link.
 
 ``` html
 <body>
@@ -101,12 +101,12 @@ You can check the browsers supported [here](http://caniuse.com/#feat=intersectio
 
 IE 11 is not supported by turtle.
 
-**Minified files found in the dist folder are es5 compatible.**
+**Files found in the dist folder are es5 compatible.**
 
 ## Todo List
 
 * [x] ~~Refactor turtle to use a function caller.~~
-* [ ] Refactor turtle to have a proper return? as in ```const turtle = turtle();```
+* [ ] Refactor turtle to have a different return? as in ```const turtle = turtle();```
 * [x] ~~Refactor turtle's observe "action" to a function. ```observe(images);```~~
 * [x] Refactor main to return ```observe(images);```?
 * [ ] Refactor turtle to use async/await.

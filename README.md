@@ -105,16 +105,12 @@ IE 11 is not supported by turtle.
 
 ## Todo List
 
-* [x] ~~Refactor turtle to use a function caller.~~
-* [ ] Refactor turtle to have a different return? as in ```const turtle = turtle();```
-* [x] ~~Refactor turtle's observe "action" to a function. ```observe(images);```~~
-* [x] Refactor main to return ```observe(images);```?
+* [ ] Refactor turtle to have a different return?
+* [x] Refactor main to return ```observe(images);```
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work.
-* [x] ~~Add options to the plugin when called.~~
-* [x] Add a project page.
-* [x] ~~Drop ```.es7``` modules.~~
 * [ ] Refactor turtle to the bones.
+* [x] Add a project page.
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.
 

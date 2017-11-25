@@ -110,6 +110,7 @@ IE 11 is not supported by turtle.
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work.
 * [ ] Refactor turtle to the bones.
+* [ ] Make it work on Edge.
 * [x] Add a project page.
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.

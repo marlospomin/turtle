@@ -38,7 +38,7 @@
     function observe(images) {
       observer = new IntersectionObserver(onIntersection, config);
 
-      images.forEach(function (image) {
+      Array.from(images).forEach(function (image) {
         // If the image has been handled, skip to the next image
         if (image.classList.contains('turtle--handled')) {
           return;
@@ -88,7 +88,7 @@
       }
 
       // Loop through image entries
-      entries.forEach(function (entry) {
+      Array.from(entries).forEach(function (entry) {
         // If the image is in the viewport unobserve it
         if (entry.intersectionRatio > 0) {
           imageCount--;

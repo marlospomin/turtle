@@ -35,6 +35,7 @@ export default function (selector = '.turtle', config = {}) {
   }
 
   function fetchImage(url) {
+    // Create a promise to fetch an image
     return new Promise((resolve, reject) => {
       const image = new Image();
       image.src = url;
@@ -55,19 +56,10 @@ export default function (selector = '.turtle', config = {}) {
     return fetchImage(src).then(() => { applyImage(image, src); });
   }
 
-  function disconnect() {
-    // If not observing break
-    if (!observer) {
-      return;
-    }
-
-    observer.disconnect();
-  }
-
   function onIntersection(entries) {
     // Disconnect if we've already loaded all of the images
     if (imageCount === 0) {
-      disconnect();
+      observer.disconnect();
     }
 
     // Loop through image entries

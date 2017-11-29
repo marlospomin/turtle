@@ -1,8 +1,8 @@
 const gulp = require('gulp');
+const karma = require('karma');
 const babel = require('gulp-babel');
 const rename = require("gulp-rename");
 const eslint = require('gulp-eslint');
-const karma = require('karma').Server;
 const uglify = require('gulp-uglifyjs');
 const browserSync = require('browser-sync');
 
@@ -32,7 +32,7 @@ gulp.task('reload', function () {
 
 // Test task
 gulp.task('test', function (done) {
-  new karma({
+  new karma.Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
   }, function (exitCode) {

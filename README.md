@@ -105,13 +105,9 @@ IE 11 is not supported by turtle.
 
 ## Todo List
 
-* [ ] Refactor turtle to have a different return?
-* [x] Refactor main to return ```observe(images);```
 * [ ] Refactor turtle to use async/await.
 * [ ] Write real tests and make them work.
 * [ ] Refactor turtle to the bones.
-* [x] Make it work on Edge.
-* [x] Add a project page.
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.
 

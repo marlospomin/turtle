@@ -1,7 +1,6 @@
 const defaultConfig = {
   // If the image gets within 50px of the Y axis, start the download
-  rootMargin: '50px',
-  threshold: 0
+  rootMargin: '50px'
 };
 
 // If we don't have support for intersection observer, throw error
@@ -11,16 +10,14 @@ if (!('IntersectionObserver' in window)) {
 
 export default function (selector = '.turtle', config = {}) {
   // Push default config options into config above
-  const { rootMargin, treshold } = { ...defaultConfig, ...config };
-
+  const { rootMargin } = { ...defaultConfig, ...config };
   // Get all of the images that are marked up to lazy load
   const images = document.querySelectorAll(selector);
-
-  // Counts all the images found that were marked
-  let imageCount = images.length;
+  // Create the observer
   let observer;
 
   function observe(images) {
+    // Create the observer instance
     observer = new IntersectionObserver(onIntersection, config);
 
     Array.from(images).forEach((image) => {
@@ -28,7 +25,6 @@ export default function (selector = '.turtle', config = {}) {
       if (image.classList.contains('turtle--handled')) {
         return;
       }
-
       // Observes the image
       observer.observe(image);
     });
@@ -37,14 +33,18 @@ export default function (selector = '.turtle', config = {}) {
   function fetchImage(url) {
     // Create a promise to fetch an image
     return new Promise((resolve, reject) => {
+      // Create a new image
       const image = new Image();
+      // Set this image to the paramenter url
       image.src = url;
+      // Handles errors
       image.onload = resolve;
       image.onerror = reject;
     });
   }
 
   function preloadImage(image) {
+    // Load src from the dataset
     const src = image.dataset.src;
 
     // If src is not found break
@@ -57,17 +57,10 @@ export default function (selector = '.turtle', config = {}) {
   }
 
   function onIntersection(entries) {
-    // Disconnect if we've already loaded all of the images
-    if (imageCount === 0) {
-      observer.disconnect();
-    }
-
     // Loop through image entries
     Array.from(entries).forEach((entry) => {
       // If the image is in the viewport unobserve it
       if (entry.intersectionRatio > 0) {
-        imageCount--;
-
         // Stop watching and load the image
         observer.unobserve(entry.target);
         preloadImage(entry.target);

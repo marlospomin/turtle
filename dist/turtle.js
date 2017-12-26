@@ -23,19 +23,16 @@
 
     // Push default config options into config above
     var _defaultConfig$config = _extends({}, defaultConfig, config),
-        rootMargin = _defaultConfig$config.rootMargin,
-        treshold = _defaultConfig$config.treshold;
-
+        rootMargin = _defaultConfig$config.rootMargin;
     // Get all of the images that are marked up to lazy load
 
 
     var images = document.querySelectorAll(selector);
-
-    // Counts all the images found that were marked
-    var imageCount = images.length;
+    // Create the observer
     var observer = void 0;
 
     function observe(images) {
+      // Create the observer instance
       observer = new IntersectionObserver(onIntersection, config);
 
       Array.from(images).forEach(function (image) {
@@ -43,7 +40,6 @@
         if (image.classList.contains('turtle--handled')) {
           return;
         }
-
         // Observes the image
         observer.observe(image);
       });
@@ -52,14 +48,18 @@
     function fetchImage(url) {
       // Create a promise to fetch an image
       return new Promise(function (resolve, reject) {
+        // Create a new image
         var image = new Image();
+        // Set this image to the paramenter url
         image.src = url;
+        // Handles errors
         image.onload = resolve;
         image.onerror = reject;
       });
     }
 
     function preloadImage(image) {
+      // Load src from the dataset
       var src = image.dataset.src;
 
       // If src is not found break
@@ -74,17 +74,10 @@
     }
 
     function onIntersection(entries) {
-      // Disconnect if we've already loaded all of the images
-      if (imageCount === 0) {
-        observer.disconnect();
-      }
-
       // Loop through image entries
       Array.from(entries).forEach(function (entry) {
         // If the image is in the viewport unobserve it
         if (entry.intersectionRatio > 0) {
-          imageCount--;
-
           // Stop watching and load the image
           observer.unobserve(entry.target);
           preloadImage(entry.target);
@@ -118,8 +111,7 @@
 
   var defaultConfig = {
     // If the image gets within 50px of the Y axis, start the download
-    rootMargin: '50px',
-    threshold: 0
+    rootMargin: '50px'
   };
 
   // If we don't have support for intersection observer, throw error

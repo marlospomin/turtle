@@ -113,7 +113,7 @@ IE 11 is not supported by turtle.
 
 ## Contributing
 
-If you feel like we missed something please do send us a message or, alternatively make a pull request or open an issue using a discussion/request label and we will go from there.
+If you feel like I missed something please do send me a message or, alternatively make a pull request/open an issue and we will go from there.
 
 ## License
 

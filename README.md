@@ -106,7 +106,7 @@ IE 11 is not supported by turtle.
 ## Todo List
 
 * [ ] Refactor turtle to use async/await.
-* [ ] Write real tests and make them work.
+* [ ] Write tests.
 * [ ] Refactor turtle to the bones.
 
 **Legend**: Checked boxes mean *__partial__* completion, checked and ~~crossed~~ items mean they're *__fully__* working.

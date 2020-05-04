@@ -1,5 +1,5 @@
 const defaultConfig = {
-  // If the image gets within 50px of the Y axis, start the download
+  // If the window gets within 50px of the image, trigger the download
   rootMargin: '50px',
 }
 
@@ -9,28 +9,26 @@ if (!('IntersectionObserver' in window)) {
 }
 
 export default function(selector = '.turtle', config = {}) {
-  // Push default config options into config above
-  const { rootMargin } = { ...defaultConfig, ...config }
+  // Push default config options into the function
+  config = { ...defaultConfig, ...config }
   // Get all of the images that are marked up to lazy load
   const images = document.querySelectorAll(selector)
   // Create the observer
   let observer
 
-  function observe(images) {
+  const observe = (entries) => {
     // Create the observer instance
     observer = new IntersectionObserver(onIntersection, config)
 
-    Array.from(images).forEach((image) => {
+    Array.from(entries).forEach((entry) => {
       // If the image has been handled, skip to the next image
-      if (image.classList.contains('turtle--handled')) {
-        return
-      }
+      if (entry.classList.contains('turtle--handled')) return
       // Observes the image
-      observer.observe(image)
+      observer.observe(entry)
     })
   }
 
-  function fetchImage(url) {
+  const fetchImage = (url) => {
     // Create a promise to fetch an image
     return new Promise((resolve, reject) => {
       // Create a new image
@@ -43,20 +41,16 @@ export default function(selector = '.turtle', config = {}) {
     })
   }
 
-  function preloadImage(image) {
+  const preloadImage = (image) => {
     // Load src from the dataset
     const src = image.dataset.src
-
     // If src is not found break
-    if (!src) {
-      return
-    }
-
+    if (!src) return
     // Fetches an image and applies it to the viewport
-    return fetchImage(src).then(() => { applyImage(image, src) })
+    return fetchImage(src).then(() => applyImage(image, src))
   }
 
-  function onIntersection(entries) {
+  const onIntersection = (entries) => {
     // Loop through image entries
     Array.from(entries).forEach((entry) => {
       // If the image is in the viewport unobserve it
@@ -68,7 +62,7 @@ export default function(selector = '.turtle', config = {}) {
     })
   }
 
-  function applyImage(img, src) {
+  const applyImage = (img, src) => {
     // Prevent this from being lazy loaded a second time
     img.classList.add('turle--handled')
     // Update image src value

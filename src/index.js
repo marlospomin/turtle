@@ -28,26 +28,13 @@ export default function(selector = '.turtle', config = {}) {
     })
   }
 
-  const fetchImage = (url) => {
-    // Create a promise to fetch an image
-    return new Promise((resolve, reject) => {
-      // Create a new image
-      const image = new Image()
-      // Set this image to the paramenter url
-      image.src = url
-      // Handles errors
-      image.onload = resolve
-      image.onerror = reject
-    })
-  }
-
   const preloadImage = (image) => {
     // Load src from the dataset
     const src = image.dataset.src
     // If src is not found break
     if (!src) return
-    // Fetches an image and applies it to the viewport
-    return fetchImage(src).then(() => applyImage(image, src))
+    // Applies an image to the viewport
+    return applyImage(image, src)
   }
 
   const onIntersection = (entries) => {

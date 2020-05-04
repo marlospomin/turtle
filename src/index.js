@@ -3,11 +3,6 @@ const defaultConfig = {
   rootMargin: '50px',
 }
 
-// If we don't have support for intersection observer, throw error
-if (!('IntersectionObserver' in window)) {
-  throw new Error('Intersection Observer is not supported by this browser.')
-}
-
 export default function(selector = '.turtle', config = {}) {
   // Push default config options into the function
   config = { ...defaultConfig, ...config }

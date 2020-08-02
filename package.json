@@ -1,7 +1,7 @@
 {
   "name": "@marlospomin/turtle",
   "description": "A blazing fast javascript plugin to lazy-load your images with no dependencies.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Marlos Pomin",
   "files": [
     "dist/"
